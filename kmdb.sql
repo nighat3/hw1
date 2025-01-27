@@ -305,12 +305,13 @@ INSERT INTO ACTORS (
 -- Prints a header for the movies output
 .print "Movies"
 .print "========"
-select movies. movie_title, movies.movie_year, movies.mpaa_rating, studios.studio_name from movies
-inner join studios on studios.id = movies.studio_id;
 .print ""
 
 -- The SQL statement for the movies output
--- TODO!
+select movies.movie_title, movies.movie_year, movies.mpaa_rating, studios.studio_name 
+from movies
+inner join studios on studios.id = movies.studio_id;
+
 
 -- Prints a header for the cast output
 .print ""
@@ -318,6 +319,8 @@ inner join studios on studios.id = movies.studio_id;
 .print "========"
 .print ""
 
-
 -- The SQL statement for the cast output
--- TODO!
+select movies.movie_title, actors.actor_name, characters.character_name
+from characters
+inner join movies on characters.movie_id = movies.id
+inner join actors on characters.actor_id = actors.id 
