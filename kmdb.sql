@@ -20,9 +20,9 @@
 -- - As a guest, I want to see a list of movies with the title, year released,
 --   MPAA rating, and studio information.
 -- - As a guest, I want to see the movies which a single studio has produced.
--- - As a guest, I want to see each movie's cast including each actor's
+-- - ***As a guest, I want to see each movie's cast including each actor's
 --   name and the name of the character they portray.
--- - As a guest, I want to see the movies which a single actor has acted in.
+-- - ***As a guest, I want to see the movies which a single actor has acted in.
 -- * Note: The "guest" user role represents the experience prior to logging-in
 --   to an app and typically does not have a corresponding database table.
 
@@ -111,14 +111,41 @@
 .headers off
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
--- TODO!
+DROP TABLE if exists movies;
+DROP TABLE if exists characters;
+DROP TABLE if exists actors;
+DROP TABLE if exists studios;
 
 -- Create new tables, according to your domain model
--- TODO!
+
+CREATE TABLE MOVIES (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_title TEXT,
+    movie_year TEXT,
+    mpaa_rating TEXT,
+    studio_id INT
+);
+CREATE TABLE CHARACTERS (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    character_name TEXT,
+    actor_id INT,
+    movie_id INT
+);
+CREATE TABLE ACTORS (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    actor_name TEXT
+);
+
+CREATE TABLE STUDIOS (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    studio_name TEXT
+);
+
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
--- TODO!
+-- 
+
 
 -- Prints a header for the movies output
 .print "Movies"
