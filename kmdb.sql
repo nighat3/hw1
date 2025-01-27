@@ -117,7 +117,9 @@ DROP TABLE if exists actors;
 DROP TABLE if exists studios;
 
 -- Create new tables, according to your domain model
+-- My domain model contains 4 tables: movies, characters, actors, and studios
 
+-- This table contains the name, release year, MPAA rating, and Studio foreign key for each movie.
 CREATE TABLE movies (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     movie_title TEXT,
@@ -125,17 +127,22 @@ CREATE TABLE movies (
     mpaa_rating TEXT,
     studio_id INT
 );
+
+-- This table contains the name, actor foreign key, and movie foreign key for each character.
 CREATE TABLE characters (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     character_name TEXT,
     actor_id INT,
     movie_id INT
 );
+
+--This table contains the name of the actors who worked in the Batman movies.
 CREATE TABLE actors (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     actor_name TEXT
 );
 
+--This table contains the name of the studios involved in producing the Batman movies.
 CREATE TABLE studios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     studio_name TEXT
