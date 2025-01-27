@@ -145,11 +145,168 @@ CREATE TABLE STUDIOS (
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- 
+INSERT INTO movies (
+   movie_title,
+   movie_year,
+   mpaa_rating,
+   studio_id
+) VALUES (
+    "Batman Begins",
+    "2005",
+    "PG-13",
+   1
+
+), 
+(
+    "The Dark Knight",
+    "2008",
+    "PG-13",
+    1
+), 
+(
+    "The Dark Knight Rises",
+    "2012",
+    "PG-13",
+    1
+);
+
+INSERT INTO STUDIOS (
+   studio_name
+) VALUES (
+    "Warner Bros."
+
+);
+
+INSERT INTO CHARACTERS (
+    character_name,
+    actor_id,
+    movie_id
+) VALUES (
+    "Bruce Wayne",
+    1,
+    1
+),
+(
+    "Alfred",
+    2,
+    1
+    
+),
+(
+    "Ra's Al Ghul",
+    3,
+    1
+    
+),
+(
+    "Rachel Dawes",
+    4,
+    1
+),
+(
+    "Commissioner Gordon",
+    5,
+    1
+),
+(
+    "Bruce Wayne",
+    1,
+    2
+),
+(
+    "Joker",
+    6,
+    2
+),
+(
+    "Harvey Dent",
+    7,
+    2
+),
+(
+    "Alfred",
+    2,
+    2
+    
+),
+(
+    "Rachel Dawes",
+    8,
+    2
+    
+),
+(
+    "Bruce Wayne",
+    1,
+    3
+),
+(
+    "Commissioner Gordon",
+    5,
+    3
+),
+(
+    "Bane",
+    9,
+    3  
+),
+(
+    "John Blake",
+    10,
+    3
+),
+(
+    "Selina Kyle",
+    11,
+    3
+);
+
+INSERT INTO ACTORS (
+    actor_name
+) VALUES (
+    "Christian Bale"
+    
+),
+(
+    "Michael Caine"
+),
+(
+    "Liam Neeson"
+),
+(
+    "Katie Holmes"
+),
+(
+    "Gary Oldman"
+),
+(
+    "Heath Ledger"
+),
+(
+    "Aaron Eckhart"
+),
+(
+    "Maggie Gyllenhaal"
+),
+(
+    "Tom Hardy"
+),
+(
+    "Joseph Gordon-Levitt"
+),
+(
+    "Anne Hathaway"
+)
+
+;
+
 
 
 -- Prints a header for the movies output
 .print "Movies"
-.print "======"
+.print "========"
+select movies. movie_title, movies.movie_year, movies.mpaa_rating, studios.studio_name from movies
+inner join studios on studios.id = movies.studio_id;
 .print ""
 
 -- The SQL statement for the movies output
