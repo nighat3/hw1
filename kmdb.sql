@@ -118,25 +118,25 @@ DROP TABLE if exists studios;
 
 -- Create new tables, according to your domain model
 
-CREATE TABLE MOVIES (
+CREATE TABLE movies (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     movie_title TEXT,
     movie_year TEXT,
     mpaa_rating TEXT,
     studio_id INT
 );
-CREATE TABLE CHARACTERS (
+CREATE TABLE characters (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     character_name TEXT,
     actor_id INT,
     movie_id INT
 );
-CREATE TABLE ACTORS (
+CREATE TABLE actors (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     actor_name TEXT
 );
 
-CREATE TABLE STUDIOS (
+CREATE TABLE studios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     studio_name TEXT
 );
@@ -170,14 +170,14 @@ INSERT INTO movies (
     1
 );
 
-INSERT INTO STUDIOS (
+INSERT INTO studios (
    studio_name
 ) VALUES (
     "Warner Bros."
 
 );
 
-INSERT INTO CHARACTERS (
+INSERT INTO characters (
     character_name,
     actor_id,
     movie_id
@@ -261,7 +261,7 @@ INSERT INTO CHARACTERS (
     3
 );
 
-INSERT INTO ACTORS (
+INSERT INTO actors (
     actor_name
 ) VALUES (
     "Christian Bale"
